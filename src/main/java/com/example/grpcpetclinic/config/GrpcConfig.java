@@ -12,4 +12,5 @@ public class GrpcConfig {
 	public BindableService protoReflectionService() {
 		return ProtoReflectionService.newInstance();
 	}
+
 }
