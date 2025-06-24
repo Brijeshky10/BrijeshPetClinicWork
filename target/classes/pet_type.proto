@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.grpcpetclinic.grpc";
+option java_outer_classname = "PetTypeProtoModels";
+
+service PetTypeService {
+  rpc CreatePetType (PetTypeRequest) returns (PetTypeResponse);
+  rpc GetPetTypeById (PetTypeByIdRequest) returns (PetTypeResponse);
+}
+
+message PetTypeRequest {
+  string name = 1;
+  int32 length = 2;
+  double weight = 3;
+  string temperament = 4;
+}
+
+message PetTypeByIdRequest {
+  int32 id = 1;
+}
+
+message PetTypeResponse {
+  int32 id = 1;
+  string name = 2;
+  int32 length = 3;
+  double weight = 4;
+  string temperament = 5;
+}
